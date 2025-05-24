@@ -1,3 +1,6 @@
+"""Auth action - console authentication actions"""
+
+
 from rich.console import Console
 from rich.panel import Panel
 from rich.prompt import Prompt
@@ -6,14 +9,18 @@ from model.user import User
 from service.auth_service import AuthService
 
 class AuthAction:
-    def __init__(self, console: Console, auth_service: AuthService,):
+    def __init__(self, console: Console, auth_service: AuthService):
         self.auth_service = auth_service
         self.console = console
 
     def handle_signup(self):
         """Handle user signup process."""
         self.console.clear()
-        self.console.print(Panel("=== SIGN UP ==="))
+        self.console.print(Panel(
+            "=== SIGN UP ===",
+            style="cyan",
+            border_style="purple"
+        ))
         username = Prompt.ask("Enter username").lower()
 
         try:
@@ -29,7 +36,11 @@ class AuthAction:
     def handle_signin(self) -> User | None:
         """Handle user signin process."""
         self.console.clear()
-        self.console.print(Panel("=== SIGN IN ==="))
+        self.console.print(Panel(
+            "=== SIGN IN ===",
+            style = "cyan",
+            border_style = "purple"
+        ))
         username = Prompt.ask("Enter username").lower()
 
         try:

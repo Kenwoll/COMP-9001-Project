@@ -8,12 +8,12 @@ import uuid
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric import rsa
 from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives.asymmetric.dh import DHPrivateKey
 
 from dao.data_manager import DataManager
 from model.user import User
 
 USER_FILE_PATH = "users.json"
-
 
 class AuthService:
     def __init__(self, data_manager: DataManager):
@@ -60,11 +60,7 @@ class AuthService:
             ).decode()
 
             if provided_public_key == users[username]["public_key"]:
-                user = User(
-                    username=users[username]["username"],
-                    ssh_public_key=users[username]["public_key"],
-                    user_id=users[username]["user_id"]
-                )
+                user = User.from_dict(users[username])
                 return True, f"User {username} authenticated successfully", user
             else:
                 raise ValueError("Invalid SSH key")
@@ -104,7 +100,7 @@ class AuthService:
         except Exception as e:
             raise Exception(f"Failed to save private key: {str(e)}")
 
-    def _load_private_key(self, username: str):
+    def _load_private_key(self, username: str) -> DHPrivateKey:
         """Load private key from file."""
         try:
             private_key_path = os.path.join(self.data_manager.data_dir, f"{username}_private_key.pem")
