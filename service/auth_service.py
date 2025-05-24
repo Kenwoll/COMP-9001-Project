@@ -1,3 +1,8 @@
+"""
+Auth Service - User authentication service
+"""
+
+
 import os
 import uuid
 from cryptography.hazmat.primitives import serialization
@@ -17,6 +22,9 @@ class AuthService:
     def register_user(self, username: str):
         """Register a new user with generated SSH key."""
         try:
+            if len(username) < 7:
+                return False, "Username should be at least 7 characters long."
+
             users = self.data_manager.load_json(USER_FILE_PATH)
 
             if username in users:
