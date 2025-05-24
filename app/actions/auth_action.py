@@ -18,39 +18,44 @@ class AuthAction:
         self.console.clear()
         self.console.print(Panel(
             "=== SIGN UP ===",
-            style="cyan",
-            border_style="purple"
+            style="bright_cyan",
+            border_style="bold magenta"
         ))
-        username = Prompt.ask("Enter username").lower()
 
-        try:
-            success, message = self.auth_service.register_user(username)
-            if success:
-                self.console.print(f"{message}")
-                return
+        while True:
+            username = Prompt.ask("Enter username").lower()
 
-            self.console.print(f"Error: {message}")
-        except Exception as e:
-            self.console.print(f"Error: {str(e)}")
+            try:
+                success, message = self.auth_service.register_user(username)
+                if success:
+                    Prompt.ask(f"{message}")
+                    return
+
+                self.console.print(f"Error: {message}\n", style="bold bright_red")
+            except Exception as e:
+                self.console.print(f"Error: {str(e)}\n", style="bold bright_red")
 
     def handle_signin(self) -> User | None:
         """Handle user signin process."""
         self.console.clear()
         self.console.print(Panel(
             "=== SIGN IN ===",
-            style = "cyan",
-            border_style = "purple"
+            style = "bright_cyan",
+            border_style = "bold magenta"
         ))
-        username = Prompt.ask("Enter username").lower()
 
-        try:
-            success, message, user = self.auth_service.authenticate_user(username)
-            if success:
-                self.console.print(f"{message}")
-                return user
+        while True:
+            username = Prompt.ask("Enter username").lower().strip()
 
-            self.console.print(f"Error: {message}")
-            return None
-        except Exception as e:
-            self.console.print(f"Error: {str(e)}")
-            return None
+            if len(username) < 7:
+                self.console.print(f"Error: username must be at least 7 characters long.\n", style="bold bright_red")
+                continue
+
+            try:
+                success, message, user = self.auth_service.authenticate_user(username)
+                if success:
+                    return user
+
+                self.console.print(f"Error: {message}\n", style="bold bright_red")
+            except Exception as e:
+                self.console.print(f"Error: {str(e)}\n", style="bold bright_red")

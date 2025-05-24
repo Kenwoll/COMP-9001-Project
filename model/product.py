@@ -2,16 +2,19 @@
 Product Model - Product data structure and operations
 """
 
+
 class Category:
-    def __init__(self, name: str, description: str, ascii_art: str) -> None:
+    def __init__(self, key: str, name: str, description: str, ascii_art: str) -> None:
+        self.key = key
         self.name = name
         self.description = description
         self.ascii_art = ascii_art
 
     @staticmethod
-    def from_dict(data: dict):
+    def from_dict(key: str, data: dict):
         """Convert to dictionary to object"""
         return Category(
+            key=key,
             name=data['name'],
             description=data['description'],
             ascii_art=data['ascii_art']

@@ -16,7 +16,8 @@ class ShopService:
         """Get all product categories"""
         try:
             categories = self.data_manager.load_json(PRODUCTS_FILE_PATH)["categories"]
-            categories = [Category.from_dict(cat) for _, cat in categories.items()]
+            categories = [Category.from_dict(key, cat) for key, cat in categories.items()]
+
             return categories
         except Exception as e:
             raise ValueError(f"Failed to load categories: {str(e)}")
@@ -24,9 +25,10 @@ class ShopService:
     def get_products_by_category(self, category: str) -> list[Product]:
         """Get products in a specific category."""
         try:
-            categories = self.data_manager.load_json(PRODUCTS_FILE_PATH)
-            if category not in categories:
-                raise ValueError(f"Category '{category}' not found")
-            return categories.get(category, [])
+            products = self.data_manager.load_json(PRODUCTS_FILE_PATH)["products"]
+            products = [Product.from_dict(p) for p in products]
+            products = filter(lambda p: p.category == category, products)
+
+            return list(products)
         except Exception as e:
             raise ValueError(f"Failed to load products for category '{category}': {str(e)}")
