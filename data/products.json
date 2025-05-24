@@ -1,0 +1,122 @@
+{
+  "categories": {
+    "cyber_implants": {
+      "name": "Cyber Implants",
+      "description": "Enhance your biological limitations",
+      "ascii_art": "⚡ AUGMENT ⚡"
+    },
+    "weapons": {
+      "name": "Weapons",
+      "description": "Tools for the digital battlefield",
+      "ascii_art": "⚔️ ARSENAL ⚔️"
+    },
+    "software": {
+      "name": "Software",
+      "description": "Code that bends reality",
+      "ascii_art": "💻 PROGRAMS 💻"
+    },
+    "gadgets": {
+      "name": "Gadgets",
+      "description": "Everyday tech for the future",
+      "ascii_art": "🔧 TECH 🔧"
+    }
+  },
+  "products": [
+    {
+      "id": "ci001",
+      "name": "Neural Interface v3.2",
+      "description": "Direct brain-computer interface. Jack into cyberspace. WARNING: May cause digital addiction and existential dread.",
+      "price": 15000,
+      "category": "cyber_implants",
+      "rarity": "legendary"
+    },
+    {
+      "id": "ci002",
+      "name": "Mantis Blades",
+      "description": "Retractable carbon-fiber forearm blades. Slice through corporate lies and enemy flesh with equal ease.",
+      "price": 8500,
+      "category": "cyber_implants",
+      "rarity": "rare"
+    },
+    {
+      "id": "ci003",
+      "name": "Cybernetic Eyes",
+      "description": "Enhanced optical implants with night vision, zoom, and target analysis. See the matrix for what it really is.",
+      "price": 6200,
+      "category": "cyber_implants",
+      "rarity": "rare"
+    },
+    {
+      "id": "w001",
+      "name": "Smart Pistol",
+      "description": "Auto-targeting sidearm with AI assistance. Thinks faster than you do, shoots faster than your enemies can hide.",
+      "price": 2300,
+      "category": "weapons",
+      "rarity": "common"
+    },
+    {
+      "id": "w002",
+      "name": "Plasma Rifle",
+      "description": "High-energy weapon that melts through armor like butter. Corporate security's worst nightmare.",
+      "price": 12000,
+      "category": "weapons",
+      "rarity": "legendary"
+    },
+    {
+      "id": "w003",
+      "name": "Mono-molecular Katana",
+      "description": "Traditional blade with a modern twist. Edge sharpened to molecular level cuts through anything.",
+      "price": 7800,
+      "category": "weapons",
+      "rarity": "rare"
+    },
+    {
+      "id": "s001",
+      "name": "ICE Breaker v2.0",
+      "description": "Advanced hacking suite. Penetrate the most secure corporate networks. Leaves no digital footprints.",
+      "price": 5500,
+      "category": "software",
+      "rarity": "rare"
+    },
+    {
+      "id": "s002",
+      "name": "Ghost Protocol",
+      "description": "Ultimate stealth program. Become invisible in both digital and physical realms. Used by the best netrunners.",
+      "price": 9200,
+      "category": "software",
+      "rarity": "legendary"
+    },
+    {
+      "id": "s003",
+      "name": "Data Miner Pro",
+      "description": "Extract valuable intel from any system. Turn information into power, power into eddies.",
+      "price": 3400,
+      "category": "software",
+      "rarity": "common"
+    },
+    {
+      "id": "g001",
+      "name": "Holographic Display",
+      "description": "Portable 3D interface projector. Make reality more interesting with augmented overlays.",
+      "price": 1200,
+      "category": "gadgets",
+      "rarity": "common"
+    },
+    {
+      "id": "g002",
+      "name": "Personal Drone",
+      "description": "Autonomous surveillance and utility drone. Your eyes and hands where you can't be.",
+      "price": 2800,
+      "category": "gadgets",
+      "rarity": "common"
+    },
+    {
+      "id": "g003",
+      "name": "Neural Stimulator",
+      "description": "Boost cognitive performance beyond human limits. Warning: Addiction potential high.",
+      "price": 4600,
+      "category": "gadgets",
+      "rarity": "rare"
+    }
+  ]
+}
