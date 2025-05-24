@@ -11,4 +11,9 @@ class User:
 
     def to_dict(self):
         """Convert to dictionary for JSON storage"""
-        pass
+        return {
+            "username": self.username,
+            "public_key": self.ssh_public_key,
+            "user_id": self.user_id,
+            "orders": []
+        }
