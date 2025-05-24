@@ -14,48 +14,50 @@ class App:
         self.auth_action = auth_action
         self.shop_action = shop_action
         self.current_user = None
+        self.state = "login"
 
     def login_menu(self):
-        """Display the main menu and handle user input."""
-        while True:
-            self.console.clear()
-            self.console.print(Panel(
-                "[1] SIGN UP\n[2] SIGN IN\n[3] EXIT",
-                title="LOGIN MENU",
-                style="cyan",
-                border_style="purple"
-            ))
-            choice = Prompt.ask("Select an option", choices=["1", "2", "3"], default="3")
+        """Display the login menu and handle user input."""
+        self.console.clear()
+        self.console.print(Panel(
+            "[1] SIGN UP\n[2] SIGN IN\n[3] EXIT",
+            title="LOGIN MENU",
+            style="cyan",
+            border_style="purple"
+        ))
+        choice = Prompt.ask("Select an option", choices=["1", "2", "3"], default="3")
 
-            if choice == "1":
-                self.auth_action.handle_signup()
-            elif choice == "2":
-                user = self.auth_action.handle_signin()
-                if user:
-                    print(user)
-                    self.current_user = user
-                    self.main_menu()
-            elif choice == "3":
-                self.console.print("Exiting CYBER TERMINAL SHOP. Goodbye.")
-                break
+        if choice == "1":
+            self.auth_action.handle_signup()
+            self.state = "login"
+        elif choice == "2":
+            user = self.auth_action.handle_signin()
+            if user:
+                self.console.print(f"[bold green]Welcome, {user.username}! You are now signed in.[/bold green]")
+                self.current_user = user
+                self.state = "main"
+        elif choice == "3":
+            self.console.clear()
+            self.console.print("[bold magenta]Exiting CYBER TERMINAL SHOP. Goodbye.[/bold magenta]")
+            self.state = None
 
     def main_menu(self):
         """Display the authenticated menu for logged-in users."""
-        while True:
-            self.console.clear()
-            self.console.print(Panel(
-                "[1] CATEGORIES\n[2] EXIT",
-                title="MAIN MENU",
-                style="cyan",
-                border_style="purple"
-            ))
-            choice = Prompt.ask("Select an option", choices=["1", "2"], default="2")
+        self.console.clear()
+        self.console.print(Panel(
+            "[1] CATEGORIES\n[2] EXIT",
+            title="MAIN MENU",
+            style="cyan",
+            border_style="purple"
+        ))
+        choice = Prompt.ask("Select an option", choices=["1", "2"], default="2")
 
-            if choice == "1":
-                self.categories_menu()
-            elif choice == "2":
-                self.current_user = None
-                self.login_menu()
+        if choice == "1":
+            self.categories_menu()
+            self.state = "main"
+        elif choice == "2":
+            self.current_user = None
+            self.state = "login"
 
     def categories_menu(self):
         self.console.clear()
@@ -74,5 +76,9 @@ class App:
 
     def run(self):
         """Start the application."""
-        self.console.print("Initializing CYBER TERMINAL SHOP...")
-        self.login_menu()
+        self.console.print("[bold magenta]Initializing CYBER TERMINAL SHOP...[/bold magenta]")
+        while self.state:
+            if self.state == "login":
+                self.login_menu()
+            elif self.state == "main":
+                self.main_menu()
