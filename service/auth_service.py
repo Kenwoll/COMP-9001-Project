@@ -2,7 +2,6 @@
 Auth Service - User authentication service
 """
 
-
 import os
 import uuid
 from cryptography.hazmat.primitives import serialization
@@ -13,14 +12,31 @@ from cryptography.hazmat.primitives.asymmetric.dh import DHPrivateKey
 from dao.data_manager import DataManager
 from model.user import User
 
+
 USER_FILE_PATH = "users.json"
 
+
 class AuthService:
+    """
+    Initialize Auth Service instance
+
+    Parameters:
+        data_manager (DataManager): Data Manager instance
+    """
     def __init__(self, data_manager: DataManager):
         self.data_manager = data_manager
 
-    def register_user(self, username: str):
-        """Register a new user with generated SSH key."""
+    def register_user(self, username: str) -> tuple[bool, str]:
+        """
+        Register a new user with generated SSH key.
+
+        Parameters:
+            username (str): username
+
+        Returns:
+            bool: True if user was registered successfully
+            str: error or success message
+        """
         try:
             if len(username) < 7:
                 return False, "Username should be at least 7 characters long."
@@ -45,7 +61,17 @@ class AuthService:
             return False, f"Failed to register user {username}: {str(e)}"
 
     def authenticate_user(self, username: str) -> tuple[bool, str, User | None]:
-        """Authenticate user with SSH key."""
+        """
+        Authenticate user with SSH key.
+
+        Parameters:
+            username (str): username
+
+        Returns:
+            bool: True if user was authenticated successfully
+            str: error or success message
+            User: user object if successful
+        """
         try:
             users = self.data_manager.load_json(USER_FILE_PATH)
 
@@ -68,7 +94,13 @@ class AuthService:
             raise ValueError(f"Authentication failed: {str(e)}")
 
     def _generate_ssh_key(self) -> tuple[str, str]:
-        """Generate SSH key."""
+        """
+        Generate SSH key.
+
+        Returns:
+            str: private key and public key
+            str: public key
+        """
         try:
             key = rsa.generate_private_key(
                 public_exponent=65537,
@@ -92,7 +124,13 @@ class AuthService:
             raise Exception(f"Failed to generate SSH key pair: {str(e)}")
 
     def _save_private_key(self, username: str, private_key: str):
-        """Save private key to file."""
+        """
+        Save private key to file.
+
+        Parameters:
+            username (str): username
+            private_key (str): private key
+        """
         try:
             private_key_path = os.path.join(self.data_manager.data_dir, f"{username}_private_key.pem")
             with open(private_key_path, "w") as f:
@@ -101,7 +139,15 @@ class AuthService:
             raise Exception(f"Failed to save private key: {str(e)}")
 
     def _load_private_key(self, username: str) -> DHPrivateKey:
-        """Load private key from file."""
+        """
+        Load private key from file.
+
+        Parameters:
+            username (str): username
+
+        Returns:
+             DHPrivateKey: private key instance from cryptography module
+        """
         try:
             private_key_path = os.path.join(self.data_manager.data_dir, f"{username}_private_key.pem")
 

@@ -1,5 +1,8 @@
-"""APP console"""
+"""
+APP console
 
+This module is responsible for running whole application and orchestrating user actions.
+"""
 
 from rich.console import Console
 from rich.panel import Panel
@@ -65,6 +68,7 @@ class App:
             self.state = "login"
 
     def categories_menu(self):
+        """Display the categories menu and handle user input."""
         self.console.clear()
         self.display_banner()
         categories = self.shop_action.show_categories()
@@ -79,6 +83,12 @@ class App:
             self.product_menu(categories[int(choice)-1].key)
 
     def product_menu(self, category_key: str):
+        """
+        Display the product menu and handle user input.
+
+        Parameters:
+            category_key (str): The category key for listing the products.
+        """
         self.console.clear()
         self.display_banner()
         products = self.shop_action.show_products(category_key)

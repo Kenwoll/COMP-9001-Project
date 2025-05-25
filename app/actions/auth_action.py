@@ -1,5 +1,8 @@
-"""Auth action - console authentication actions"""
+"""
+Auth action - console authentication actions
 
+This module is responsible for handling authentication based console actions.
+"""
 
 from rich.console import Console
 from rich.panel import Panel
@@ -8,7 +11,15 @@ from rich.prompt import Prompt
 from model.user import User
 from service.auth_service import AuthService
 
+
 class AuthAction:
+    """
+    Initialize Auth action instance
+
+    Parameters:
+        console (Console): Console instance from rich package
+        auth_service (AuthService): Auth service instance for handling authentication
+    """
     def __init__(self, console: Console, auth_service: AuthService):
         self.auth_service = auth_service
         self.console = console
@@ -36,7 +47,12 @@ class AuthAction:
                 self.console.print(f"Error: {str(e)}\n", style="bold bright_red")
 
     def handle_signin(self) -> User | None:
-        """Handle user signin process."""
+        """
+        Handle user signin process.
+
+        Returns:
+            User | None: User instance
+        """
         self.console.clear()
         self.console.print(Panel(
             "=== SIGN IN ===",

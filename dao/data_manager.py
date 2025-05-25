@@ -2,9 +2,9 @@
 Data Manager - Handles JSON file operations
 """
 
-
 import os
 import json
+
 
 class DataManager:
     def __init__(self):
