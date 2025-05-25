@@ -75,15 +75,32 @@ class ShopAction:
         table = Table(show_header=False, style="dim cyan", border_style="bold magenta", expand=True)
         table.add_column("Option", style="bold bright_cyan", justify="left")
         table.add_column("Product", style="bold bright_green", justify="left")
+        table.add_column("Rarity", style="bold bright_magenta", justify="center")
         table.add_column("Description", style="bright_white", justify="left")
         table.add_column("Price", style="bold bright_yellow", justify="right")
 
         table.add_row("[0]", "EXIT", "", "")
 
+        rarity_styles = {
+            "common": "dim white",
+            "rare": "bold blue",
+            "legendary": "bold bright_yellow"
+        }
+
+        rarity_symbols = {
+            "common": "●",
+            "rare": "◆",
+            "legendary": "★"
+        }
+
         for idx, product in enumerate(products):
+            rarity_style = rarity_styles.get(product.rarity, "white")
+            rarity_symbol = rarity_symbols.get(product.rarity, "●")
+
             table.add_row(
                 f"[{idx + 1}]",
                 product.name,
+                f"[{rarity_style}]{rarity_symbol} {product.rarity.upper()}[/{rarity_style}]",
                 product.description,
                 f"{product.price} credits"
             )
