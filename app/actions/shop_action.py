@@ -32,7 +32,11 @@ class ShopAction:
         Returns:
              list[Category]: List of categories
         """
-        categories = self.shop_service.get_categories()
+        try:
+            categories = self.shop_service.get_categories()
+        except Exception as e:
+            self.console.print(f"Error: {str(e)}\n", style="bold bright_red")
+            return []
 
         category_texts = ["[0] EXIT"]
         for idx, category in enumerate(categories):
@@ -62,7 +66,11 @@ class ShopAction:
         Returns:
             list[Product]: List of products
         """
-        products = self.shop_service.get_products_by_category(category_key)
+        try:
+            products = self.shop_service.get_products_by_category(category_key)
+        except Exception as e:
+            self.console.print(f"Error: {str(e)}\n", style="bold bright_red")
+            return []
 
         table = Table(show_header=False, style="dim cyan", border_style="bold magenta", expand=True)
         table.add_column("Option", style="bold bright_cyan", justify="left")
