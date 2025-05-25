@@ -3,12 +3,12 @@
     "cyber_implants": {
       "name": "Cyber Implants",
       "description": "Enhance your biological limitations",
-      "ascii_art": "⚡ AUGMENT ⚡"
+      "ascii_art": "⚡️AUGMENT ⚡️"
     },
     "weapons": {
       "name": "Weapons",
       "description": "Tools for the digital battlefield",
-      "ascii_art": "ARSENAL 🔫"
+      "ascii_art": "🔫 ARSENAL 🔫"
     },
     "software": {
       "name": "Software",
@@ -19,6 +19,11 @@
       "name": "Gadgets",
       "description": "Everyday tech for the future",
       "ascii_art": "🔧 TECH 🔧"
+    },
+    "vehicles": {
+      "name": "Vehicles",
+      "description": "Machines built for speed and survival",
+      "ascii_art": "🛸RIDES 🛸"
     }
   },
   "products": [
@@ -47,6 +52,62 @@
       "rarity": "rare"
     },
     {
+      "id": "ci004",
+      "name": "Subdermal Armor",
+      "description": "Titanium-weave implants under your skin. Turn your body into a walking fortress. Bullets become suggestions.",
+      "price": 9800,
+      "category": "cyber_implants",
+      "rarity": "rare"
+    },
+    {
+      "id": "ci005",
+      "name": "Adrenal Boosters",
+      "description": "Combat stimulant dispensers in your bloodstream. React faster than humanly possible when death comes calling.",
+      "price": 4200,
+      "category": "cyber_implants",
+      "rarity": "common"
+    },
+    {
+      "id": "ci006",
+      "name": "Cyber Legs v2.5",
+      "description": "Military-grade leg replacements. Jump 20 feet high, run 60 mph. Leave your human limitations in the dust.",
+      "price": 18500,
+      "category": "cyber_implants",
+      "rarity": "legendary"
+    },
+    {
+      "id": "ci007",
+      "name": "Memory Palace",
+      "description": "Expanded storage capacity for your brain. Never forget a face, password, or grudge ever again.",
+      "price": 7300,
+      "category": "cyber_implants",
+      "rarity": "rare"
+    },
+    {
+      "id": "ci008",
+      "name": "Thermal Regulators",
+      "description": "Internal climate control systems. Survive arctic cold or desert heat. Weather is just another obstacle to overcome.",
+      "price": 3800,
+      "category": "cyber_implants",
+      "rarity": "common"
+    },
+    {
+      "id": "ci009",
+      "name": "Cyber Heart",
+      "description": "Titanium pump that never stops. Immunity to cardiac arrest, toxins, and emotional attachment.",
+      "price": 11200,
+      "category": "cyber_implants",
+      "rarity": "rare"
+    },
+    {
+      "id": "ci010",
+      "name": "Neural Firewall",
+      "description": "Mental security system against netrunner attacks. Your thoughts remain your own in this connected world.",
+      "price": 13800,
+      "category": "cyber_implants",
+      "rarity": "legendary"
+    },
+    {
       "id": "w001",
       "name": "Smart Pistol",
       "description": "Auto-targeting sidearm with AI assistance. Thinks faster than you do, shoots faster than your enemies can hide.",
@@ -69,6 +130,62 @@
       "price": 7800,
       "category": "weapons",
       "rarity": "rare"
+    },
+    {
+      "id": "w004",
+      "name": "Shock Baton",
+      "description": "Non-lethal crowd control weapon. Delivers enough voltage to drop a cyberpsycho. Great for interrogations.",
+      "price": 800,
+      "category": "weapons",
+      "rarity": "common"
+    },
+    {
+      "id": "w005",
+      "name": "Gauss Rifle",
+      "description": "Magnetic acceleration weapon. Silent, deadly, and leaves no ballistic evidence. The assassin's choice.",
+      "price": 15500,
+      "category": "weapons",
+      "rarity": "legendary"
+    },
+    {
+      "id": "w006",
+      "name": "Cyber Whip",
+      "description": "Electrified neural whip. Cuts through armor and disrupts enemy cyberware. Pain is the message.",
+      "price": 3400,
+      "category": "weapons",
+      "rarity": "common"
+    },
+    {
+      "id": "w007",
+      "name": "Sonic Cannon",
+      "description": "Sound-based area denial weapon. Shatter windows, bones, and enemy morale with targeted frequencies.",
+      "price": 8900,
+      "category": "weapons",
+      "rarity": "rare"
+    },
+    {
+      "id": "w008",
+      "name": "Smart Grenades",
+      "description": "AI-guided explosives with target recognition. They know friend from foe better than you do.",
+      "price": 1200,
+      "category": "weapons",
+      "rarity": "common"
+    },
+    {
+      "id": "w009",
+      "name": "Laser Carbine",
+      "description": "Precision energy weapon with unlimited ammo. Solar-powered death ray for the environmentally conscious killer.",
+      "price": 6700,
+      "category": "weapons",
+      "rarity": "rare"
+    },
+    {
+      "id": "w010",
+      "name": "Quantum Destabilizer",
+      "description": "Experimental weapon that phases targets out of reality. Some problems require impossible solutions.",
+      "price": 25000,
+      "category": "weapons",
+      "rarity": "legendary"
     },
     {
       "id": "s001",
@@ -95,6 +212,62 @@
       "rarity": "common"
     },
     {
+      "id": "s004",
+      "name": "Virus Factory",
+      "description": "Automated malware generator. Create custom digital plagues for any target. Spread chaos with a click.",
+      "price": 4800,
+      "category": "software",
+      "rarity": "rare"
+    },
+    {
+      "id": "s005",
+      "name": "Memory Wipe",
+      "description": "Selective amnesia inducer. Make inconvenient witnesses forget they ever saw you. Clean exits guaranteed.",
+      "price": 7200,
+      "category": "software",
+      "rarity": "rare"
+    },
+    {
+      "id": "s006",
+      "name": "AI Assistant Alpha",
+      "description": "Personal artificial intelligence companion. Handles mundane tasks while you focus on bigger schemes.",
+      "price": 2100,
+      "category": "software",
+      "rarity": "common"
+    },
+    {
+      "id": "s007",
+      "name": "Corporate Backdoor",
+      "description": "Pre-installed access to major corp systems. Someone on the inside left the door open for you.",
+      "price": 12500,
+      "category": "software",
+      "rarity": "legendary"
+    },
+    {
+      "id": "s008",
+      "name": "Reality Simulator",
+      "description": "Perfect virtual world generator. When real life gets too real, step into something better.",
+      "price": 6800,
+      "category": "software",
+      "rarity": "rare"
+    },
+    {
+      "id": "s009",
+      "name": "Signal Jammer",
+      "description": "Digital interference package. Cut enemy communications and create electronic dead zones.",
+      "price": 1900,
+      "category": "software",
+      "rarity": "common"
+    },
+    {
+      "id": "s010",
+      "name": "Quantum Encryptor",
+      "description": "Unbreakable encryption using quantum entanglement. Your secrets stay secret until the heat death of the universe.",
+      "price": 15800,
+      "category": "software",
+      "rarity": "legendary"
+    },
+    {
       "id": "g001",
       "name": "Holographic Display",
       "description": "Portable 3D interface projector. Make reality more interesting with augmented overlays.",
@@ -117,6 +290,142 @@
       "price": 4600,
       "category": "gadgets",
       "rarity": "rare"
+    },
+    {
+      "id": "g004",
+      "name": "Stealth Cloak",
+      "description": "Optical camouflage device. Bend light around your body. Become the shadow you were meant to be.",
+      "price": 8200,
+      "category": "gadgets",
+      "rarity": "rare"
+    },
+    {
+      "id": "g005",
+      "name": "Portable Med Station",
+      "description": "Emergency medical suite in a briefcase. Patch up bullet holes and broken bones on the go.",
+      "price": 3500,
+      "category": "gadgets",
+      "rarity": "common"
+    },
+    {
+      "id": "g006",
+      "name": "Quantum Communicator",
+      "description": "Instantaneous communication across any distance. Some conversations can't wait for speed of light.",
+      "price": 6900,
+      "category": "gadgets",
+      "rarity": "rare"
+    },
+    {
+      "id": "g007",
+      "name": "Gravity Boots",
+      "description": "Walk on walls and ceilings. Physics is just another rule to break when you have the right equipment.",
+      "price": 5200,
+      "category": "gadgets",
+      "rarity": "rare"
+    },
+    {
+      "id": "g008",
+      "name": "Scanner Goggles",
+      "description": "Multi-spectrum analysis eyewear. See heat signatures, x-ray vision, and hidden electronic signatures.",
+      "price": 2400,
+      "category": "gadgets",
+      "rarity": "common"
+    },
+    {
+      "id": "g009",
+      "name": "Time Dilator",
+      "description": "Personal temporal field generator. Slow down time around you when reflexes matter most.",
+      "price": 14500,
+      "category": "gadgets",
+      "rarity": "legendary"
+    },
+    {
+      "id": "g010",
+      "name": "Universal Translator",
+      "description": "Real-time language conversion device. Break down communication barriers in the global underground.",
+      "price": 1800,
+      "category": "gadgets",
+      "rarity": "common"
+    },
+    {
+      "id": "v001",
+      "name": "Cyber Motorcycle",
+      "description": "Street racing bike with neural control interface. Think it, and the bike responds. Speed is your religion.",
+      "price": 18500,
+      "category": "vehicles",
+      "rarity": "rare"
+    },
+    {
+      "id": "v002",
+      "name": "Armored Sedan",
+      "description": "Corporate executive transport with military-grade protection. Survive assassination attempts in style.",
+      "price": 32000,
+      "category": "vehicles",
+      "rarity": "legendary"
+    },
+    {
+      "id": "v003",
+      "name": "Hover Bike",
+      "description": "Anti-gravity personal transport. Traffic jams are for people who can't afford to fly.",
+      "price": 24500,
+      "category": "vehicles",
+      "rarity": "rare"
+    },
+    {
+      "id": "v004",
+      "name": "Stealth Jet",
+      "description": "Personal aircraft invisible to radar. When you need to disappear into the sky without a trace.",
+      "price": 85000,
+      "category": "vehicles",
+      "rarity": "legendary"
+    },
+    {
+      "id": "v005",
+      "name": "Combat Exosuit",
+      "description": "Walking tank for urban warfare. Turn yourself into a one-person army with integrated weapons systems.",
+      "price": 45000,
+      "category": "vehicles",
+      "rarity": "legendary"
+    },
+    {
+      "id": "v006",
+      "name": "Speed Demon Car",
+      "description": "Nitro-powered street racer with AI driver assistance. Break every speed limit and law of physics.",
+      "price": 28000,
+      "category": "vehicles",
+      "rarity": "rare"
+    },
+    {
+      "id": "v007",
+      "name": "Submarine Pod",
+      "description": "Personal underwater vehicle. Explore flooded cities and escape through storm drains.",
+      "price": 16500,
+      "category": "vehicles",
+      "rarity": "rare"
+    },
+    {
+      "id": "v008",
+      "name": "Drone Swarm Controller",
+      "description": "Command center for autonomous drone fleet. Be everywhere at once with your mechanical army.",
+      "price": 12800,
+      "category": "vehicles",
+      "rarity": "common"
+    },
+    {
+      "id": "v009",
+      "name": "Tunnel Mole",
+      "description": "Underground drilling vehicle. Make your own roads when the streets belong to your enemies.",
+      "price": 22000,
+      "category": "vehicles",
+      "rarity": "rare"
+    },
+    {
+      "id": "v010",
+      "name": "Orbital Shuttle",
+      "description": "Private spacecraft for off-world travel. When Earth gets too hot, the stars are calling your name.",
+      "price": 150000,
+      "category": "vehicles",
+      "rarity": "legendary"
     }
   ]
 }
